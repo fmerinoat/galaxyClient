@@ -14,6 +14,7 @@ export class GalaxyComponent {
   planeta ="";
   error: boolean = false;
   registroOk = false;
+  mensajeError ="";
 
   constructor(public _galaxyService: GalaxyService) {
    }
@@ -27,7 +28,13 @@ export class GalaxyComponent {
         setTimeout( ()=> this.registroOk =  false, 3000)
       },
       error => {
+        console.log('Entra en el error');
+        if(error.status == 400){
+          console.log('Es estado 400');
+          console.log(error.error);
+        }
           console.log(<any>error);
+          this.mensajeError = error.error;
           this.error = true;
           setTimeout( ()=> this.error =  false, 3000)
       }
