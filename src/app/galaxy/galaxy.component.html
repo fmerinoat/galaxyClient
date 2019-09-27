@@ -3,39 +3,39 @@
 <div *ngIf="error" class="alert alert-danger animated fadeIn">
     <strong>Error!</strong> El Rebelde no ha sido registrado.
 </div>
-<div *ngIf="registroOk" class="alert alert-success animated fadeIn" ">
+<div *ngIf="registroOk" class="alert alert-success animated fadeIn">
     El Rebelde ha sido registrado correctamente.
 </div>
-<form (ngSubmit)="guardar(forma) " #forma="ngForm " novalidate>
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate>
 
     <div>
-        <div class="form-group row ">
-            <label class="col-2 col-form-label ">Nombre</label>
-            <div class="col-8 ">
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Nombre</label>
+            <div class="col-8">
 
-                <input class="form-control " type="text " placeholder="Nombre del Rebelde " name="nombre " [(ngModel)]="rebelName " minlength="5 " required #nombre="ngModel " [ngClass]=" { 'is-invalid': (nombre.errors?.minlength || nombre.errors?.required)
-    && nombre.touched} ">
+                <input class="form-control" type="text" placeholder="Nombre del Rebelde " name="nombre" [(ngModel)]="rebelName" minlength="5" required #nombre="ngModel" [ngClass]="{ 'is-invalid': (nombre.errors?.minlength || nombre.errors?.required)
+    && nombre.touched}">
 
-                <div *ngIf="nombre.errors?.required && nombre.touched " [ngClass]=" { 'invalid-feedback': nombre.errors?.required && nombre.touched } ">
+                <div *ngIf="nombre.errors?.required && nombre.touched" [ngClass]="{ 'invalid-feedback': nombre.errors?.required && nombre.touched}">
                     Este campo es requerido
                 </div>
-                <div *ngIf="nombre.errors?.minlength && nombre.touched " [ngClass]=" { 'invalid-feedback': nombre.errors?.minlength && nombre.touched } ">
+                <div *ngIf="nombre.errors?.minlength && nombre.touched" [ngClass]="{ 'invalid-feedback': nombre.errors?.minlength && nombre.touched }">
                     Requiere minimo {{ nombre.errors.minlength.requiredLength }} caracteres
                 </div>
             </div>
         </div>
 
-        <div class="form-group row ">
-            <label class="col-2 col-form-label ">Planeta</label>
-            <div class="col-8 ">
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Planeta</label>
+            <div class="col-8">
 
-                <input class="form-control " type="text " placeholder="Nombre del Planeta " name="planet " [(ngModel)]="planeta " minlength="5 " required #planet="ngModel " [ngClass]=" { 'is-invalid': (planet.errors?.minlength || planet.errors?.required)
-    && planet.touched} ">
+                <input class="form-control" type="text" placeholder="Nombre del Planeta" name="planet" [(ngModel)]="planeta" minlength="5 " required #planet="ngModel" [ngClass]="{ 'is-invalid': (planet.errors?.minlength || planet.errors?.required)
+    && planet.touched}">
 
-                <div *ngIf="planet.errors?.required && planet.touched " [ngClass]=" { 'invalid-feedback': planet.errors?.required && planet.touched } ">
+                <div *ngIf="planet.errors?.required && planet.touched" [ngClass]="{ 'invalid-feedback': planet.errors?.required && planet.touched}">
                     Este campo es requerido
                 </div>
-                <div *ngIf="planet.errors?.minlength && planet.touched " [ngClass]=" { 'invalid-feedback': planet.errors?.minlength && planet.touched } ">
+                <div *ngIf="planet.errors?.minlength && planet.touched" [ngClass]="{'invalid-feedback': planet.errors?.minlength && planet.touched}">
                     Requiere minimo {{ planet.errors.minlength.requiredLength }} caracteres
                 </div>
             </div>
@@ -44,10 +44,10 @@
     </div>
 
 
-    <div class="form-group row ">
-        <label class="col-2 col-form-label ">&nbsp;</label>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8 ">
-            <button [disabled]="!forma.valid " type="submit " class="btn btn-outline-primary ">
+            <button [disabled]="!forma.valid " type="submit" class="btn btn-outline-primary">
         Guardar
       </button>
         </div>
